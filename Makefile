@@ -13,7 +13,7 @@ pdf:
 		-o slides.pdf
 
 view:
-	zathura slides.pdf 
+	zathura --fork slides.pdf 
 
 clean:
 	rm -f {./,./parts/}*.{aux,log,nav,toc,snm,pdf,out,png}
