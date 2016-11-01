@@ -48,6 +48,11 @@ shepard
 
 # Object Oriented Programming
 
+## What is OOP ?
+
+> - New way of thinking
+> - Patterns
+
 ## Classes
 
 hazriel
