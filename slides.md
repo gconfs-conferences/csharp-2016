@@ -68,14 +68,22 @@ reaper
 
 # Advanced C\#
 
+## Namespaces
+
+mevouc
+
 ## Operators overloading
 
 mevouc
 
-## Lambda functions
+## Genericity
 
-mevouc
+## Functionnal programming
 
+> - Function types
+> - Function values
+> - Function arithmetic
+> - LINQ
 
 
 
