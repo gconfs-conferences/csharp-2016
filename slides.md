@@ -51,11 +51,71 @@ shepard
 ## What is OOP ?
 
 > - New way of thinking
-> - Patterns
+> - Existence of patterns
+> - Create objects from these patterns
+> - Make these objects interact
 
 ## Classes
 
-hazriel
+```cs
+class Window
+{
+  int width;
+  int height;
+  float opacity;
+  bool hasShutter;
+  [...]
+}
+```
+
+## Classes
+
+```cs
+class Meven
+{
+  int height; // Pretty small
+  Color eyesColor;
+
+  // Methods
+  public string getName();
+  public void Work();
+  public void Sleep();
+  public bool isTired();
+  [...]
+  private void getNaked();
+}
+
+```
+
+## Classes
+
+> - How do I create an object ?
+> - Use the keyword `new`
+> - `new` is used with class constructor
+
+## Classes
+
+```cs
+public void main()
+{
+  Meven meven = new Meven();
+  // Then you can call meven's methods
+  
+  if (!meven.isTired())
+    meven.Work();
+  else
+    meven.Work();
+}
+
+```
+
+## Classes
+
+> - What is a class constructor ?
+> - Instanciate a new object
+> - Pass parameters along with it
+> - You can have several constructors per class
+> - Default constructor given if not specified
 
 ## Visibility
 
