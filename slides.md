@@ -8,10 +8,28 @@
 
 ## History
 
+> - Microsoft's answer to Java
+> - January 1999: Anders Hejlsberg and his team start working on `Cool` (C-like
+    Object Oriented Language)
+> - July 2000: .NET and C# are announced
+
+## Design
+
+### Anders Hejlsberg
+- Not a Java clone and is much closer to C++
+
+## Name
+
+> - `C`
+> - `C++`
+> - `C++++`
+> - `C#`
+
 ## Characteristics
 
 > - Strongly typed
 > - Imperative, procedural
+> - Functionnal since C# 3.0
 > - Object oriented
 > - Object oriented
 > - OBJECT ORIENTED
