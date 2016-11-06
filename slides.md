@@ -309,7 +309,7 @@ var b = a + ab;
 // b.x == 55 && b.y == 111
 ```
 
-## Genericity
+## Generics
 
 > - Define type-safe data structures.
 > - Avoid duplication of code.
