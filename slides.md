@@ -306,7 +306,7 @@ var a = new Vector2(42, 42);
 var ab = new Vector2(13, 69);
 
 var b = a + ab;
-// b.x == 55 && b.y == 111
+// b.x = 55 && b.y = 111
 ```
 
 ## Generics
@@ -356,7 +356,7 @@ Stack<int> stack = null;
 
 for (int i = 0; i < 7; ++i)
   stack = new Stack<int>(i, stack);
-// stack == 6 -> 5 -> 4 -> 3 -> 2 -> 1 -> 0 -> null
+// stack = 6 -> 5 -> 4 -> 3 -> 2 -> 1 -> 0 -> null
 
 int four = stack.Pop().Pop().Peek();
 
@@ -370,7 +370,7 @@ Stack<double> stack = null;
 
 for (double i = 0.0; i < 7.0; ++i)
   stack = new Stack<double>(i, stack);
-// stack == 6. -> 5. -> 4. -> 3. -> 2. -> 1. -> 0. -> null
+// stack = 6. -> 5. -> 4. -> 3. -> 2. -> 1. -> 0. -> null
 
 double four = stack.Pop().Pop().Peek();
 
@@ -379,9 +379,59 @@ Stack<double> tail = stack.Pop();
 
 ## Functionnal programming
 
-> - Function types
-> - Function values
-> - Function arithmetic
-> - LINQ
+> - Function types (create objects which are functions)
+> - Function values (assign functions or methods)
+> - Function arithmetic (add or substract functions)
+> - LINQ (can replace loops)
+
+## Func, Predicate, Action
+
+```cs
+Func<double, double> f = Math.Exp;
+double e = f(1);
+
+/* Func<string, void> act ... */
+Action<string> act = Console.WriteLine;
+
+/* Func<string, string, bool> p ... */
+Predicate<string, string> p = String.Equals;
+string str = "Test.";
+
+if (p(str, "Test."))
+  act("Votai");
+```
+
+## delegate, lambdas, anonymous functions
+
+```cs
+Func<int, int> MultAnswer
+  = delegate(int x) { return 42 * n; };
+
+// is equivalent to
+
+Func<int, int> MultAnswer = n => 42 * n;
+
+int answer = MultAnswer(1);
+// answer = 42
+```
+
+## Function arithmetic
+
+```cs
+Action<string> hello =
+  str => Console.WriteLine("Hello {0}!", str);
+
+Action<string> bye =
+  str => Console.WriteLine("Bye {0}…", str);
+
+Action<string> greetings = hello + bye;
+
+greetings("Hazriel");
+// Hello Hazriel!
+// Bye Hazriel…
+
+(greetings - hello)("Shepard");
+// Bye Shepard…
+```
 
 # Questions?
