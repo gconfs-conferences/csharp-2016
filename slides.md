@@ -180,8 +180,6 @@ public void main()
 
 ```
 
-# Questions ?
-
 ## Visibility
 
 reaper
@@ -190,18 +188,99 @@ reaper
 
 reaper
 
+# Questions?
 
 # Advanced C\#
 
+## Useful keywords
+
+> - `var`
+> - `typeof`
+> - and more… (`explicit`, `yield`, `try`, `unsafe`, etc.)
+
+## var
+
+```cs
+MyClassWithABigName obj = new MyClassWithABigName();
+
+// is equivalent to
+
+var obj = new MyClassWithABigName();
+```
+
+
+## initialize with null
+
+```cs
+Acdc shepard = new Acdc();
+shepard.Teach();
+shepard = null;
+
+var hazriel = new Acdc();
+hazriel.Teach();
+hazriel = null;
+
+var reaper = null;
+// Compilation failed
+```
+
+## typeof
+
+> - Get the `System.Type` of a type
+> - Useful when used with the `GetType` method
+
+## typeof
+
+```cs
+Human[] people = new Human[42];
+[...] // set content of people
+
+foreach (var person in people)
+{
+  Type type = person.GetType();
+  if (type.Equals(typeof (Acdc)))
+    person.Teach();
+  else
+    person.Sleep();
+}
+```
+
+
 ## Namespaces
 
-mevouc
+> - Scopes where a set of related classes is implemented.
+> - Namespaces may nest, sub-namespaces are accessed using `'.'`.
+> - Namespaces use visibility. One can declared a class as private (only
+    accessible in the current namespace) or public (accessible from anywhere).
+
+## Usefulness of namespaces
+
+```cs
+System.Speech.Synthesis.SpeechSynthesizer synthesizer
+  = new System.Speech.Synthesis.SpeechSynthesizer();
+
+synthesizer.Speak("I am only available on Windows.");
+
+[...] // other stuff using long identifier
+```
+
+## Use a namespace
+
+```cs
+using System.Speech.Synthesis.SpeechSynthesizer;
+
+SpeechSynthesizer synthesizer2 = new SpeechSynthesizer();
+
+synthesizer2.Speak("I was declared in a simplier way.");
+```
 
 ## Operators overloading
 
 mevouc
 
 ## Genericity
+
+mevouc
 
 ## Functionnal programming
 
