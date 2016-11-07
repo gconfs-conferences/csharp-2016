@@ -43,8 +43,6 @@
 > - Use of an intermediate language
 > - MSIL (MicroSoft Intermediate Language)
 > - JIT (Just In Time) compiler
-> - Slower than C++
-> - Faster than Java
 
 ## C# compilation
 
