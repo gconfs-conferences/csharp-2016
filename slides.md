@@ -265,7 +265,7 @@ foreach (var person in people)
 ## Namespaces
 
 > - Scopes where a set of related classes is implemented.
-> - Namespaces may nest, sub-namespaces are accessed using `'.'`.
+> - Namespaces may nest, sub-namespaces are accessed using `.`.
 > - Namespaces use visibility. One can declared a class as private (only
     accessible in the current namespace) or public (accessible from anywhere).
 
