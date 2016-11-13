@@ -94,20 +94,20 @@ class Meven
   Color eyesColor;
 
   // Methods
-  public string getName();
-  public void Work();
-  public void Sleep();
-  public bool isTired();
+  string GetName();
+  void Work();
+  void Sleep();
+  bool IsTired();
   [...]
-  private void getNaked();
+  void GetNaked();
 }
 ```
 
 ## Create objects
 
 > - How do I create an object ?
-> - Use the keyword `new`
-> - `new` is used with class constructor
+> - Use the keyword *new*
+> - *new* is used with class constructor
 
 ## Call an object's method
 
@@ -118,7 +118,7 @@ public void main()
   Meven meven = new Meven();
 
   // Then you can call meven's methods
-  if (meven.isTired())
+  if (meven.IsTired())
     meven.Sleep();
   else
     meven.Work();
@@ -148,9 +148,9 @@ class Human
   [...]
 
   // Methods
-  public string getName();
-  public void Work();
-  public void Sleep();
+  string GetName();
+  void Work();
+  void Sleep();
   [...]
 }
 
@@ -160,7 +160,7 @@ class Human
 
 ```cs
 
-class Human
+public class Human
 {
   public Human()
   {
@@ -190,8 +190,67 @@ public void main()
   Human human = new Human();
   Human shepard = new Human(20, "Shepard");
 
-  human.getName(); // Returns "Martin"
-  shepard.getName(); // Returns "Shepard"
+  human.GetName(); // Returns "Martin"
+  shepard.GetName(); // Returns "Shepard"
+}
+
+```
+# Questions ?
+
+## Static fields in a class
+
+> - A static field is common to every instance of a class
+> - Cannot be accessed from instance
+> - Cannot be accessed with *this*
+
+## Static Class
+
+> - Every field is static
+> - Cannot be instanciated
+> - Fields are accessed with full name
+
+## Example
+
+```cs
+
+class Shepard
+{
+  public static int count = 0;
+  public Shepard()
+  {
+    count++;
+  }
+
+  // Fields ...
+}
+
+```
+
+## Example
+
+```cs
+
+public void main()
+{
+  Shepard s1 = new Shepard();
+  Shepard s2 = new Shepard();
+  Shepard.count; // count = 2
+}
+
+```
+
+# Questions ?
+
+## Introduction to access modifiers
+
+```cs
+
+class Martin
+{
+  // Fields ...
+  public string GetName();
+  public int GetAge();
+  private void Backflip();
 }
 
 ```
