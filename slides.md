@@ -10,7 +10,7 @@
 
 > - Microsoft's answer to Java
 > - January 1999: Anders Hejlsberg and his team start working on `Cool` (C-like
-	Object Oriented Language)
+  Object Oriented Language)
 > - July 2000: .NET and C# are announced
 
 ## Design
@@ -64,7 +64,7 @@ shepard
 
 # Object Oriented Programming
 
-## What is OOP ?
+## What is OOP?
 
 > - New way of thinking
 > - Existence of patterns
@@ -76,12 +76,12 @@ shepard
 ```cs
 class Window
 {
-	// Fields
-	int width;
-	int height;
-	float opacity;
-	bool hasShutter;
-	[...]
+  // Fields
+  int width;
+  int height;
+  float opacity;
+  bool hasShutter;
+  [...]
 }
 ```
 
@@ -90,68 +90,68 @@ class Window
 ```cs
 class Meven
 {
-	int height; // Pretty small
-	Color eyesColor;
+  int height; // Pretty small
+  Color eyesColor;
 
-	// Methods
-	string GetName();
-	void Work();
-	void Sleep();
-	bool IsTired();
-	[...]
-	void GetNaked();
+  // Methods
+  string GetName();
+  void Work();
+  void Sleep();
+  bool IsTired();
+  [...]
+  void GetNaked();
 }
 ```
 
 ## Create objects
 
-> - How do I create an object ?
-	> - Use the keyword *new*
-	> - *new* is used with class constructor
+> - How do I create an object?
+> - Use the keyword *new*
+> - *new* is used with class constructor
 
-	## Call an object's method
+## Call an object's method
 
-	```cs
+```cs
 
-	public void main()
+public static void Main(string[] args)
 {
-	Meven meven = new Meven();
+  Meven meven = new Meven();
 
-	// Then you can call meven's methods
-	if (meven.IsTired())
-		meven.Sleep();
-	else
-		meven.Work();
+  // Then you can call meven's methods
+  if (meven.IsTired())
+    meven.Sleep();
+  else
+    meven.Work();
 }
 
 ```
 
 ## Constructor
 
-> - What is a class constructor ?
+> - What is a class constructor?
 > - Instanciate a new object
 > - Pass parameters along with it
 > - You can have several constructors per class
 > - Default constructor given if not specified
 
 
-	## Example
+## Example
 
-	```cs
+```cs
 
-	class Human
+class Human
 {
-	// Fields
-	string name;
-	int height;
-	int age;
-	[...]
+  // Fields
+  string name;
+  int height;
+  int age;
+  [...]
 
-	// Methods
-	string GetName();
-	void Work();
-	void Sleep();
-	[...]
+  // Methods
+  string GetName();
+  void Work();
+  void Sleep();
+  [...]
 }
 
 ```
@@ -162,21 +162,21 @@ class Meven
 
 public class Human
 {
-	public Human()
-	{
-		// Initialize fields the way you want
-		this.name = "Martin";
-		this.age = 40;
-	}
+  public Human()
+  {
+    // Initialize fields the way you want
+    this.name = "Un mec random";
+    this.age = 40;
+  }
 
-	public Human(int age, string name)
-	{
-		this.name = name;
-		this.age = age;
-	}
+  public Human(int age, string name)
+  {
+    this.name = name;
+    this.age = age;
+  }
 
-	// Fields and methods
-	[...]
+  // Fields and methods
+  [...]
 }
 
 ```
@@ -185,17 +185,17 @@ public class Human
 
 ```cs
 
-public void main()
+public static void Main(string[] args)
 {
-	Human human = new Human();
-	Human shepard = new Human(20, "Shepard");
+  Human human = new Human();
+  Human martin = new Human(20, "Martin");
 
-	human.GetName(); // Returns "Martin"
-	shepard.GetName(); // Returns "Shepard"
+  human.GetName(); // Returns "Un mec random"
+  martin.GetName(); // Returns "Martin"
 }
 
 ```
-# Questions ?
+# Questions?
 
 ## Static fields in a class
 
@@ -213,15 +213,15 @@ public void main()
 
 ```cs
 
-class Shepard
+class Fruit
 {
-	public static int count = 0;
-	public Shepard()
-	{
-		count++;
-	}
+  public static int count = 0;
+  public Fruit()
+  {
+    count++;
+  }
 
-	// Fields ...
+  // Fields ...
 }
 
 ```
@@ -230,83 +230,192 @@ class Shepard
 
 ```cs
 
-public void main()
+public static void Main(string[] args)
 {
-	Shepard s1 = new Shepard();
-	Shepard s2 = new Shepard();
-	Shepard.count; // count = 2
+  Fruit f1 = new Fruit();
+  Fruit f2 = new Fruit();
+  Fruit.count; // count = 2
 }
 
 ```
 
-# Questions ?
+# Questions?
 
 ## Introduction to access modifiers
 
 ```cs
 
-class Martin
+class Women
 {
-	// Fields ...
-	public string GetName();
-	public int GetAge();
-	private void Backflip();
+  // Fields ...
+  public bool isEasilyTriggered;
+
+  [...]
+
+  public string GetName();
+  public int GetAge();
+  private void GetNaked();
 }
 
 ```
 
-# Visibility
-
-## `private` vs `public`
-
-> - `private`: only I can see it and modify it
-> - `public`: everyone can see it and modify it
-
-## `private` vs `public`
+## Introduction to access modifiers
 
 ```cs
 
-class Pirate
+public static void Main(string[] args)
 {
-	private int treasure;
-	public int age;
-	public string name;
+  Women femme = new Women();
+  femme.GetName(); // Returns the name
+  femme.GetAge(); // Returns the age
+  femme.GetNaked(); // Error
 }
+
 ```
 
-## Why ?
+# Access modifiers
 
-> - Clean code
-> - Safe code
-
-## Why ?
+## Access modifiers
 
 ```cs
 
 class Date
 {
-	private int day;
-	private int month;
-	private int year;
+  private int day;
+  private int month;
+  private int year;
 
-	public Date(int day, int month, int year)
-	{
-		//Check validity...
-	}
+  public Date(int day, int month, int year)
+  {
+    // Check validity...
+  }
 }
+
 ```
 
-## Inheritence
+## `private` vs `public`
 
-> - Let's go back to our pirate
+> - `private`: only accessible from within the class
+> - `public`: everyone can see it and modify it
+> - `internal` : only accessible from within the current assembly
+
+## `private` vs `public`
+
+```cs
+
+class Date
+{
+  private int day;
+  private int month;
+  private int year;
+
+  public Date(int day, int month, int year)
+  {
+    // Check validity...
+  }
+}
+
+```
+> - What if we want to modify the date later on?
+
+## Getters and setters
+
+```cs
+
+class Date
+{
+  private int day;
+  private int month;
+  private int year;
+
+  public int GetDay() { return this.day; }
+  public void SetDay(int day)
+  {
+    if (day > 0 || day <= 31)
+      this.day = day;
+    else
+      // Discard
+  }
+}
+
+```
+
+## Getters and setters
+
+> - Methods in a class
+> - Used to access private fields from outside the class
+> - Used to monitor the changes made to a field
+
+## Drawbacks
+
+> - Need to write two functions per field
+> - Leads to heavy classes
+> - Solution?
+
+## Properties
+
+```cs
+
+class Date
+{
+  private int day; // Backing field
+
+  public int Day
+  {
+    get { return this.day; }
+    set
+    {
+      if (value > 0 || value <= 31)
+        this.day = value;
+    }
+  }
+}
+
+```
+
+## Properties
+
+> - A public attribute
+> - Sub methods : *get* and *set*
+> - Used to monitor the access to the backing field
+
+## Auto-Implemented properties
+
+```cs
+
+class Human
+{
+  public string Name { get; set; }
+  public string Gender { get; set; }
+  public int Age { get; private set; } // Read only
+}
+
+```
+
+## Auto-Implemented properties
+
+> - Way faster to write
+> - Used when there's no need to monitor parameters
+> - Backing field created in background
+
+# Question?
+
+## Inheritence
 
 ```cs
 class Human
 {
-	public int age;
-	public string name;
-	
-	public Human(string name);
+  private int age;
+  private string name;
+
+  public Human(string name)
+  {
+    this.age = 1;
+    this.name = name;
+  }
+ 
+  public void Work();
+  public void Sleep();
 }
 ```
 
@@ -315,15 +424,46 @@ class Human
 ```cs
 class Pirate: Human
 {
-	private int treasure;
+  private int treasure;
 
-	public Pirate(int name): base(name)
-	{
-		//...
-	}
+  public Pirate(string name): base(name)
+  {
+    this.treasure = 0;
+  }
+
+  public Pirate(string name, int age)
+  {
+    this.name = name; // Error
+    this.age = age; // Error
+  }
 }
 ```
 
+## `protected`
+
+> - Another access modifier
+> - Only visible in a derived class and the class itself
+
+## `protected`
+
+```cs
+
+class Human
+{
+  protected int age; // Can be accessed from the pirate class
+  protected string name;
+
+  public Human(string name)
+  {
+    this.age = 1;
+    this.name = name;
+  }
+ 
+  public void Work();
+  public void Sleep();
+}
+
+```
 # Questions?
 
 # Advanced C\#
@@ -373,11 +513,11 @@ Human[] people = new Human[42];
 
 foreach (var person in people)
 {
-	Type type = person.GetType();
-	if (type.Equals(typeof (Acdc)))
-		person.Teach();
-	else
-		person.Sleep();
+  Type type = person.GetType();
+  if (type.Equals(typeof (Acdc)))
+    person.Teach();
+  else
+    person.Sleep();
 }
 ```
 
@@ -387,7 +527,7 @@ foreach (var person in people)
 > - Scopes where a set of related classes is implemented.
 > - Namespaces may nest, sub-namespaces are accessed using `.`.
 > - Namespaces use visibility. One can declared a class as private (only
-	accessible in the current namespace) or public (accessible from anywhere).
+  accessible in the current namespace) or public (accessible from anywhere).
 
 ## Usefulness of namespaces
 
@@ -420,18 +560,18 @@ synthesizer2.Speak("I was declared in a simplier way.");
 ```cs
 class Vector2
 {
-	private int x;
-	private int y;
-	public Vector2(int x, int y)
-	{
-		this.x = x;
-		this.y = y;
-	}
+  private int x;
+  private int y;
+  public Vector2(int x, int y)
+  {
+    this.x = x;
+    this.y = y;
+  }
 
-	public static Vector2 operator +(Vector2 u, Vector2 v)
-	{
-		return new Vector2 (u.x + v.x, u.y + v.y);
-	}
+  public static Vector2 operator +(Vector2 u, Vector2 v)
+  {
+    return new Vector2 (u.x + v.x, u.y + v.y);
+  }
 }
 ```
 
@@ -455,33 +595,33 @@ var b = a + ab;
 ```cs
 public class Stack<T>
 {
-	private T val;
-	private Stack<T> next;
+  private T val;
+  private Stack<T> next;
 
-	/* equivalent to Push */
-	public Stack<T>(T val, Stack<T> stack)
-	{
-		this.val = val;
-		this.next = stack;
-	}
+  /* equivalent to Push */
+  public Stack<T>(T val, Stack<T> stack)
+  {
+    this.val = val;
+    this.next = stack;
+  }
 
-	// ...
-	```
+  // ...
+  ```
 
-	## Example - stack
+  ## Example - stack
 
-	```cs
-	// ...
+  ```cs
+  // ...
 
-	public T Peek()
-	{
-		return val;
-	}
+  public T Peek()
+  {
+    return val;
+  }
 
-	public Stack<T> Pop()
-	{
-		return next;
-	}
+  public Stack<T> Pop()
+  {
+    return next;
+  }
 }
 ```
 
@@ -491,7 +631,7 @@ public class Stack<T>
 Stack<int> stack = null;
 
 for (int i = 0; i < 7; ++i)
-	stack = new Stack<int>(i, stack);
+  stack = new Stack<int>(i, stack);
 // stack = 6 -> 5 -> 4 -> 3 -> 2 -> 1 -> 0 -> null
 
 int four = stack.Pop().Pop().Peek();
@@ -505,7 +645,7 @@ Stack<int> tail = stack.Pop();
 Stack<double> stack = null;
 
 for (double i = 0.0; i < 7.0; ++i)
-	stack = new Stack<double>(i, stack);
+  stack = new Stack<double>(i, stack);
 // stack = 6. -> 5. -> 4. -> 3. -> 2. -> 1. -> 0. -> null
 
 double four = stack.Pop().Pop().Peek();
@@ -534,7 +674,7 @@ Predicate<string, string> p = String.Equals;
 string str = "Test.";
 
 if (p(str, "Test."))
-	act("Votai");
+  act("Votai");
 ```
 
 ## delegate, lambdas, anonymous functions
@@ -555,10 +695,10 @@ int answer = MultAnswer(1);
 
 ```cs
 Action<string> hello =
-	str => Console.WriteLine("Hello {0}!", str);
+  str => Console.WriteLine("Hello {0}!", str);
 
 Action<string> bye =
-	str => Console.WriteLine("Bye {0}…", str);
+  str => Console.WriteLine("Bye {0}…", str);
 
 Action<string> greetings = hello + bye;
 
