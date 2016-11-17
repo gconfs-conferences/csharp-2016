@@ -398,7 +398,7 @@ class Human
 > - Used when there's no need to monitor parameters
 > - Backing field created in background
 
-# Question?
+# Questions?
 
 ## Inheritence
 
@@ -422,11 +422,12 @@ class Human
 ## Inheritence
 
 ```cs
-class Pirate: Human
+
+class Pirate : Human
 {
   private int treasure;
 
-  public Pirate(string name): base(name)
+  public Pirate(string name) : base(name)
   {
     this.treasure = 0;
   }
@@ -437,7 +438,15 @@ class Pirate: Human
     this.age = age; // Error
   }
 }
+
 ```
+
+## Inheritence
+
+> - Use `ClassName : BaseClass` to base `ClassName` on `BaseClass`
+> - Every field is inherited from the base class
+> - *base* is used to access to the base class
+> - A new keyword comes with inheritence
 
 ## `protected`
 
@@ -464,6 +473,43 @@ class Human
 }
 
 ```
+
+## Abstract class
+
+```cs
+
+public abstract class Human
+{
+  // Fields
+  [...]
+  
+  public void Work();
+  public void Sleep();
+}
+
+```
+
+## Abstract class
+
+```cs
+
+public class Women : Human
+{
+  // Override Human.Work()
+  public override void Work()
+  {
+    // ...
+  }
+}
+
+```
+
+## Abstract class
+
+> - *abstract* is used to create pure patterns
+> - Cannot instanciate an abstract class
+> - *override* is used to replace previous definitions of methods
+
 # Questions?
 
 # Advanced C\#
