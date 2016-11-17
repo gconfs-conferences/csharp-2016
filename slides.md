@@ -1,4 +1,4 @@
-\titlepage
+﻿\titlepage
 
 ## Overview
 \tableofcontents
@@ -10,7 +10,7 @@
 
 > - Microsoft's answer to Java
 > - January 1999: Anders Hejlsberg and his team start working on `Cool` (C-like
-    Object Oriented Language)
+	Object Oriented Language)
 > - July 2000: .NET and C# are announced
 
 ## Design
@@ -76,12 +76,12 @@ shepard
 ```cs
 class Window
 {
-  // Fields
-  int width;
-  int height;
-  float opacity;
-  bool hasShutter;
-  [...]
+	// Fields
+	int width;
+	int height;
+	float opacity;
+	bool hasShutter;
+	[...]
 }
 ```
 
@@ -90,38 +90,38 @@ class Window
 ```cs
 class Meven
 {
-  int height; // Pretty small
-  Color eyesColor;
+	int height; // Pretty small
+	Color eyesColor;
 
-  // Methods
-  string GetName();
-  void Work();
-  void Sleep();
-  bool IsTired();
-  [...]
-  void GetNaked();
+	// Methods
+	string GetName();
+	void Work();
+	void Sleep();
+	bool IsTired();
+	[...]
+	void GetNaked();
 }
 ```
 
 ## Create objects
 
 > - How do I create an object ?
-> - Use the keyword *new*
-> - *new* is used with class constructor
+	> - Use the keyword *new*
+	> - *new* is used with class constructor
 
-## Call an object's method
+	## Call an object's method
 
-```cs
+	```cs
 
-public void main()
+	public void main()
 {
-  Meven meven = new Meven();
+	Meven meven = new Meven();
 
-  // Then you can call meven's methods
-  if (meven.IsTired())
-    meven.Sleep();
-  else
-    meven.Work();
+	// Then you can call meven's methods
+	if (meven.IsTired())
+		meven.Sleep();
+	else
+		meven.Work();
 }
 
 ```
@@ -135,23 +135,23 @@ public void main()
 > - Default constructor given if not specified
 
 
-## Example
+	## Example
 
-```cs
+	```cs
 
-class Human
+	class Human
 {
-  // Fields
-  string name;
-  int height;
-  int age;
-  [...]
+	// Fields
+	string name;
+	int height;
+	int age;
+	[...]
 
-  // Methods
-  string GetName();
-  void Work();
-  void Sleep();
-  [...]
+	// Methods
+	string GetName();
+	void Work();
+	void Sleep();
+	[...]
 }
 
 ```
@@ -162,21 +162,21 @@ class Human
 
 public class Human
 {
-  public Human()
-  {
-    // Initialize fields the way you want
-    this.name = "Martin";
-    this.age = 40;
-  }
+	public Human()
+	{
+		// Initialize fields the way you want
+		this.name = "Martin";
+		this.age = 40;
+	}
 
-  public Human(int age, string name)
-  {
-    this.name = name;
-    this.age = age;
-  }
+	public Human(int age, string name)
+	{
+		this.name = name;
+		this.age = age;
+	}
 
-  // Fields and methods
-  [...]
+	// Fields and methods
+	[...]
 }
 
 ```
@@ -187,11 +187,11 @@ public class Human
 
 public void main()
 {
-  Human human = new Human();
-  Human shepard = new Human(20, "Shepard");
+	Human human = new Human();
+	Human shepard = new Human(20, "Shepard");
 
-  human.GetName(); // Returns "Martin"
-  shepard.GetName(); // Returns "Shepard"
+	human.GetName(); // Returns "Martin"
+	shepard.GetName(); // Returns "Shepard"
 }
 
 ```
@@ -215,13 +215,13 @@ public void main()
 
 class Shepard
 {
-  public static int count = 0;
-  public Shepard()
-  {
-    count++;
-  }
+	public static int count = 0;
+	public Shepard()
+	{
+		count++;
+	}
 
-  // Fields ...
+	// Fields ...
 }
 
 ```
@@ -232,9 +232,9 @@ class Shepard
 
 public void main()
 {
-  Shepard s1 = new Shepard();
-  Shepard s2 = new Shepard();
-  Shepard.count; // count = 2
+	Shepard s1 = new Shepard();
+	Shepard s2 = new Shepard();
+	Shepard.count; // count = 2
 }
 
 ```
@@ -247,21 +247,82 @@ public void main()
 
 class Martin
 {
-  // Fields ...
-  public string GetName();
-  public int GetAge();
-  private void Backflip();
+	// Fields ...
+	public string GetName();
+	public int GetAge();
+	private void Backflip();
 }
 
 ```
 
-## Visibility
+# Visibility
 
-reaper
+## `private` vs `public`
+
+> - `private`: only I can see it and modify it
+> - `public`: everyone can see it and modify it
+
+## `private` vs `public`
+
+```cs
+
+class Pirate
+{
+	private int treasure;
+	public int age;
+	public string name;
+}
+```
+
+## Why ?
+
+> - Clean code
+> - Safe code
+
+## Why ?
+
+```cs
+
+class Date
+{
+	private int day;
+	private int month;
+	private int year;
+
+	public Date(int day, int month, int year)
+	{
+		//Check validity...
+	}
+}
+```
 
 ## Inheritence
 
-reaper
+> - Let's go back to our pirate
+
+```cs
+class Human
+{
+	public int age;
+	public string name;
+	
+	public Human(string name);
+}
+```
+
+## Inheritence
+
+```cs
+class Pirate: Human
+{
+	private int treasure;
+
+	public Pirate(int name): base(name)
+	{
+		//...
+	}
+}
+```
 
 # Questions?
 
@@ -312,11 +373,11 @@ Human[] people = new Human[42];
 
 foreach (var person in people)
 {
-  Type type = person.GetType();
-  if (type.Equals(typeof (Acdc)))
-    person.Teach();
-  else
-    person.Sleep();
+	Type type = person.GetType();
+	if (type.Equals(typeof (Acdc)))
+		person.Teach();
+	else
+		person.Sleep();
 }
 ```
 
@@ -326,13 +387,13 @@ foreach (var person in people)
 > - Scopes where a set of related classes is implemented.
 > - Namespaces may nest, sub-namespaces are accessed using `.`.
 > - Namespaces use visibility. One can declared a class as private (only
-    accessible in the current namespace) or public (accessible from anywhere).
+	accessible in the current namespace) or public (accessible from anywhere).
 
 ## Usefulness of namespaces
 
 ```cs
 System.Speech.Synthesis.SpeechSynthesizer synthesizer
-  = new System.Speech.Synthesis.SpeechSynthesizer();
+= new System.Speech.Synthesis.SpeechSynthesizer();
 
 synthesizer.Speak("I am only available on Windows.");
 
@@ -359,18 +420,18 @@ synthesizer2.Speak("I was declared in a simplier way.");
 ```cs
 class Vector2
 {
-  private int x;
-  private int y;
-  public Vector2(int x, int y)
-  {
-    this.x = x;
-    this.y = y;
-  }
+	private int x;
+	private int y;
+	public Vector2(int x, int y)
+	{
+		this.x = x;
+		this.y = y;
+	}
 
-  public static Vector2 operator +(Vector2 u, Vector2 v)
-  {
-    return new Vector2 (u.x + v.x, u.y + v.y);
-  }
+	public static Vector2 operator +(Vector2 u, Vector2 v)
+	{
+		return new Vector2 (u.x + v.x, u.y + v.y);
+	}
 }
 ```
 
@@ -394,33 +455,33 @@ var b = a + ab;
 ```cs
 public class Stack<T>
 {
-  private T val;
-  private Stack<T> next;
+	private T val;
+	private Stack<T> next;
 
-  /* equivalent to Push */
-  public Stack<T>(T val, Stack<T> stack)
-  {
-    this.val = val;
-    this.next = stack;
-  }
-  
-  // ...
-```
+	/* equivalent to Push */
+	public Stack<T>(T val, Stack<T> stack)
+	{
+		this.val = val;
+		this.next = stack;
+	}
 
-## Example - stack
+	// ...
+	```
 
-```cs
-  // ...
+	## Example - stack
 
-  public T Peek()
-  {
-    return val;
-  }
+	```cs
+	// ...
 
-  public Stack<T> Pop()
-  {
-    return next;
-  }
+	public T Peek()
+	{
+		return val;
+	}
+
+	public Stack<T> Pop()
+	{
+		return next;
+	}
 }
 ```
 
@@ -430,7 +491,7 @@ public class Stack<T>
 Stack<int> stack = null;
 
 for (int i = 0; i < 7; ++i)
-  stack = new Stack<int>(i, stack);
+	stack = new Stack<int>(i, stack);
 // stack = 6 -> 5 -> 4 -> 3 -> 2 -> 1 -> 0 -> null
 
 int four = stack.Pop().Pop().Peek();
@@ -444,7 +505,7 @@ Stack<int> tail = stack.Pop();
 Stack<double> stack = null;
 
 for (double i = 0.0; i < 7.0; ++i)
-  stack = new Stack<double>(i, stack);
+	stack = new Stack<double>(i, stack);
 // stack = 6. -> 5. -> 4. -> 3. -> 2. -> 1. -> 0. -> null
 
 double four = stack.Pop().Pop().Peek();
@@ -473,14 +534,14 @@ Predicate<string, string> p = String.Equals;
 string str = "Test.";
 
 if (p(str, "Test."))
-  act("Votai");
+	act("Votai");
 ```
 
 ## delegate, lambdas, anonymous functions
 
 ```cs
 Func<int, int> MultAnswer
-  = delegate(int x) { return 42 * n; };
+= delegate(int x) { return 42 * n; };
 
 // is equivalent to
 
@@ -494,10 +555,10 @@ int answer = MultAnswer(1);
 
 ```cs
 Action<string> hello =
-  str => Console.WriteLine("Hello {0}!", str);
+	str => Console.WriteLine("Hello {0}!", str);
 
 Action<string> bye =
-  str => Console.WriteLine("Bye {0}…", str);
+	str => Console.WriteLine("Bye {0}…", str);
 
 Action<string> greetings = hello + bye;
 
