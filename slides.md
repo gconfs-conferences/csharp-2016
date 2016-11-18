@@ -56,11 +56,269 @@ shepard
 
 ## Types
 
-shepard
+> - Uninitialized
 
+> - `<type> <name>;`
+
+> - Initialized
+
+> - `<type> <name> = <value>;`
+
+## Arrays
+
+```cs
+<type>[] <name>;
+<type>[] <name> = <variable>;
+<type>[] <name> = new <type>[<size>];
+```
+
+## Examples
+
+```cs
+int answer = 42;
+float pi = 3.14f;
+string rule = "The code is the law.";
+long bignum = 9223372036854775807;
+
+int[] array = new int[14];
+int[] samearray = array;
+```
+## Operators
+
+> - `+(=)`
+> - `++`
+> - `-(=)`
+> - `--`
+> - `*(=)`
+> - `/(=)`
+> - `%(=)`
+
+## Comparison operators
+
+> - `==`
+> - `!=`
+> - `<(=)`
+> - `>(=)`
+
+## Example
+
+```cs
+int answer = 20 * 2 + 2
+// answer = 42
+answer += 2;
+// answer = 44
+answer++;
+//answer = 45
+bool test = answer == 45;
+// test = true
+bool othertest = (answer % 2) == 0;
+// test = false
+string rule = "The code is " + "the law.";
+// rule = "The code is the law"
+```
+
+## Using arrays
+
+```cs
+int[] foo = new int[2];
+foo[0] = 14;
+// the first value of the array is 14
+foo[1] = 41;
+// the secod value of the array is 41
+foo[2] = 2021;
+// goodbye world...
+```
+
+## Warning !
+
+```cs
+int foo = 4;
+int bar = foo;
+bar = 21;
+```
+
+> - What is the value of foo ?
+> - 42
+
+## Warning !
+
+```cs
+int[] foo = new int[2];
+foo[0] = 42;
+int[] bar = foo;
+bar[0] = 21;
+```
+
+> - What is the value of foo?
+> - 21
+
+## Functions
+
+```cs
+<type> <name>(<type1> <name1>, <type2> <name2>, ...)
+{
+  //Function body
+  return <value of type <type>>
+}
+```
+
+## Examples
+
+```cs
+string hello(string who)
+{
+  return "Hello " + who + "!";
+}
+
+void hello2(string who)
+{
+  Console.WriteLine("Hello " + who + "!");
+  //No return needed
+}
+```
+
+## Functions calls
+
+```cs
+string hey = hello("ACDC");
+//hey = "Hello ACDC!"
+hello2("world");
+```
+
+# Imperative programming
+
+## My computer, my slave
+
+> - Make me a sandwich;
+> - Sing me a song;
+> - Do my homework;
+> - While the floor is dirty, wash the floor
+> - If the phone is ringing, answer the phone
+
+## Control structures - if
+
+```cs
+if (<condition>)
+{
+  // condition is true
+}
+else if (<condition2>) // Optional
+{
+  // condition1 is false and condition2 is true
+}
+else // Optional
+{
+  // condition1 and condition2 are false
+}
+```
+
+## Control structures - switch
+
+```cs
+switch (<variable>)
+{
+  case <case1>:
+    //instruction if <variable> == <case1>
+    break;
+  case <case2>:
+    //...
+    break;
+  default:
+    //when the variable matches no case
+    break;
+}
+```
+
+## Switch example
+
+```cs
+//year = ...
+switch(year)
+{
+  case 2017:
+    return "Monsters...";
+  case 2019:
+    return "The bests";
+  default:
+    return "You can do it !";
+}
+```
+
+## Loops - while & do while
+
+```cs
+while (<condition>)
+{
+  // while body
+}
+
+do {
+  // do while body
+} while (<condition>);
+```
+
+## Loops - examples
+
+```cs
+int i = 1;
+while (i < 42)
+{
+  i = i * 2;
+}
+
+string who = "";
+do {
+  Console.WriteLine("Hello who ?");
+  name = Console.ReadLine();
+} while (name == "");
+```
+
+## Control structures - for
+
+```cs
+for (<initial>; <condition>; <instruction>)
+{
+  // for body
+}
+```
+
+## for - examples
+
+```cs
+int[] array = new int[10];
+array[0] = 14;
+for (int i = 1; i < array.Length; i++)
+{
+  array[i] = i;
+}
+// array = 14, 1, 2, 3 ...
+```
+
+## Control structures - foreach
+
+```cs
+foreach(<type> <name> in <collection>)
+{
+  //foreach body
+}
+```
+
+## foreach - examples
+
+```cs
+string[] names = {"Hazriel", "mevouc", "reaper"};
+foreach (string name in names)
+{
+  Console.Writeline("Hello " + name);
+}
+
+foreach (string name in names)
+{
+  name = "NO."; // Will not compile
+}
+```
 
 # Questions?
-
 
 # Object Oriented Programming
 
