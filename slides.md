@@ -136,7 +136,7 @@ foo[2] = 2021;
 ## Warning !
 
 ```cs
-int foo = 4;
+int foo = 42;
 int bar = foo;
 bar = 21;
 ```
@@ -188,6 +188,35 @@ string hey = hello("ACDC");
 //hey = "Hello ACDC!"
 hello2("world");
 ```
+
+## Arguments passed by reference
+
+```cs
+<type> <name>(ref <paramtype> <paramname>)
+{
+  //function body
+}
+```
+
+## Arguments passed by reference - example
+
+```cs
+int i = 14;
+int n = 42;
+void useless(ref int i, in n)
+{
+  n += i;
+  i++;
+}
+
+useless(i, n);  // Ok
+useless(i, 42); // Ok
+useless(14, n); // Impossible
+
+```
+> - What are the values of n and i ?
+> - n = 42
+> - i = 15
 
 # Imperative programming
 
