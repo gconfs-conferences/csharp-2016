@@ -421,7 +421,7 @@ public static void Main(string[] args)
 
 > - What is a class constructor?
 > - Instanciate a new object
-> - Pass parameters along with it
+> - Initialize your fields
 > - You can have several constructors per class
 > - Default constructor given if not specified
 
@@ -451,13 +451,13 @@ class Human
 
 ```cs
 
-public class Human
+class Human
 {
   public Human()
   {
     // Initialize fields the way you want
     this.name = "Un mec random";
-    this.age = 40;
+    this.age = 0;
   }
 
   public Human(int age, string name)
@@ -486,6 +486,7 @@ public static void Main(string[] args)
 }
 
 ```
+
 ## Static fields in a class
 
 > - A static field is common to every instance of a class
