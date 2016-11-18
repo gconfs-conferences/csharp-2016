@@ -50,7 +50,11 @@
 
 ## .NET
 
-shepard
+> - Software Framework
+> - Developed by Microsoft
+> - Includes large class library (FCL)
+> - Language Interoperability
+> - VisualStudio largely made for .NET
 
 # Syntax
 
@@ -60,7 +64,6 @@ shepard
 
 
 # Questions?
-
 
 # Object Oriented Programming
 
@@ -195,8 +198,6 @@ public static void Main(string[] args)
 }
 
 ```
-# Questions?
-
 ## Static fields in a class
 
 > - A static field is common to every instance of a class
@@ -238,8 +239,6 @@ public static void Main(string[] args)
 }
 
 ```
-
-# Questions?
 
 ## Introduction to access modifiers
 
@@ -397,8 +396,6 @@ class Human
 > - Way faster to write
 > - Used when there's no need to monitor parameters
 > - Backing field created in background
-
-# Questions?
 
 ## Inheritence
 
@@ -652,11 +649,11 @@ public class Stack<T>
   }
 
   // ...
-  ```
+```
 
-  ## Example - stack
+## Example - Stack
 
-  ```cs
+```cs
   // ...
 
   public T Peek()
