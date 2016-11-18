@@ -507,6 +507,38 @@ public class Women : Human
 > - Cannot instanciate an abstract class
 > - *override* is used to replace previous definitions of methods
 
+## Interfaces
+
+> - Contains the signature of methods and properties
+> - A class can implement several interfaces
+> - Each signature must be defined by the class when implementing
+> - Classes implementing the same interface can be grouped
+
+## Interfaces
+
+```cs
+
+interface ISneaky
+{
+  public void Steal();
+  / ...
+}
+
+```
+
+## Interfaces
+
+```cs
+
+class Meven : ISneaky
+{
+  // Must define the method Steal()
+}
+
+```
+
+## Interfaces
+
 # Questions?
 
 # Advanced C\#
