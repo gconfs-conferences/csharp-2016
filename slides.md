@@ -535,9 +535,27 @@ class Meven : ISneaky
   // Must define the method Steal()
 }
 
+class Martin : ISneaky
+{
+  // Must define the method Steal()
+}
+
 ```
 
 ## Interfaces
+
+```cs
+
+public static void Main(string[] arg)
+{
+  Meven meven = new Meven();
+  Martin martin = new Martin();
+  List<ISneaky> list = new List<ISneaky>();
+  list.Add(meven);
+  list.Add(martin);
+}
+
+```
 
 # Questions?
 
