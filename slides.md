@@ -50,7 +50,11 @@
 
 ## .NET
 
-shepard
+> - Software Framework
+> - Developed by Microsoft
+> - Includes large class library (FCL)
+> - Language Interoperability
+> - VisualStudio largely made for .NET
 
 # Syntax
 
@@ -453,8 +457,6 @@ public static void Main(string[] args)
 }
 
 ```
-# Questions?
-
 ## Static fields in a class
 
 > - A static field is common to every instance of a class
@@ -496,8 +498,6 @@ public static void Main(string[] args)
 }
 
 ```
-
-# Questions?
 
 ## Introduction to access modifiers
 
@@ -656,8 +656,6 @@ class Human
 > - Used when there's no need to monitor parameters
 > - Backing field created in background
 
-# Questions?
-
 ## Inheritence
 
 ```cs
@@ -767,6 +765,56 @@ public class Women : Human
 > - *abstract* is used to create pure patterns
 > - Cannot instanciate an abstract class
 > - *override* is used to replace previous definitions of methods
+
+## Interfaces
+
+> - Contains the signature of methods and properties
+> - A class can implement several interfaces
+> - Each signature must be defined by the class when implementing
+> - Classes implementing the same interface can be grouped
+
+## Interfaces
+
+```cs
+
+interface ISneaky
+{
+  public void Steal();
+  / ...
+}
+
+```
+
+## Interfaces
+
+```cs
+
+class Meven : ISneaky
+{
+  // Must define the method Steal()
+}
+
+class Martin : ISneaky
+{
+  // Must define the method Steal()
+}
+
+```
+
+## Interfaces
+
+```cs
+
+public static void Main(string[] arg)
+{
+  Meven meven = new Meven();
+  Martin martin = new Martin();
+  List<ISneaky> list = new List<ISneaky>();
+  list.Add(meven);
+  list.Add(martin);
+}
+
+```
 
 # Questions?
 
@@ -910,11 +958,11 @@ public class Stack<T>
   }
 
   // ...
-  ```
+```
 
-  ## Example - stack
+## Example - Stack
 
-  ```cs
+```cs
   // ...
 
   public T Peek()
@@ -962,7 +1010,6 @@ Stack<double> tail = stack.Pop();
 > - Function types (create objects which are functions)
 > - Function values (assign functions or methods)
 > - Function arithmetic (add or substract functions)
-> - LINQ (can replace loops)
 
 ## Func, Predicate, Action
 
