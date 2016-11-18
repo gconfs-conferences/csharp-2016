@@ -203,15 +203,15 @@ hello2("world");
 ```cs
 int i = 14;
 int n = 42;
-void useless(ref int i, in n)
+void useless(ref int i, int n)
 {
   n += i;
   i++;
 }
 
-useless(i, n);  // Ok
-useless(i, 42); // Ok
-useless(14, n); // Impossible
+useless(ref i, n);  // Ok
+useless(ref i, 42); // Ok
+useless(ref 14, n); // Impossible
 
 ```
 > - What are the values of n and i ?
