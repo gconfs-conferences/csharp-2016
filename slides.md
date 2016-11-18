@@ -273,7 +273,7 @@ do {
 } while (name == "");
 ```
 
-## Control structures - for
+## Loops - for
 
 ```cs
 for (<initial>; <condition>; <instruction>)
@@ -294,7 +294,7 @@ for (int i = 1; i < array.Length; i++)
 // array = 14, 1, 2, 3 ...
 ```
 
-## Control structures - foreach
+## Loops - foreach
 
 ```cs
 foreach(<type> <name> in <collection>)
