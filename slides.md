@@ -966,6 +966,75 @@ var b = a + ab;
 // b.x = 55 && b.y = 111
 ```
 
+## Exceptions
+
+> - Manage errors
+> - Allow to create our own errors
+> - `Exception` is a Class
+
+## throw
+
+```cs
+static int GetNumber(int index)
+{
+    int[] nums = { 300, 600, 900 };
+    if (index >= nums.Length)
+        throw new Exception("You're out.");
+    return nums[index];
+}
+
+public static void Main() 
+{
+    int result = GetNumber(3);
+    Console.WriteLine(result); // Never executed…
+}
+
+// Unhandled Exception:
+// System.Exception: You're out.
+```
+
+## try-catch
+
+```cs
+private static int Transform(string num)
+{
+  return Convert.ToInt32(num);
+}
+
+public static void Main()
+{
+  try {
+    int n = Transform("42");
+    Console.WriteLine(n);
+  } catch {
+    Console.Error.WriteLine("You fool !");
+  }
+}
+
+// 42
+```
+
+## try-catch
+
+```cs
+private static int Transform(string num)
+{
+  return Convert.ToInt32(num);
+}
+
+public static void Main()
+{
+  try {
+    int n = Transform("Forty-two");
+    Console.WriteLine(n);
+  } catch {
+    Console.Error.WriteLine("You fool !");
+  }
+}
+
+// On error output: You fool !
+```
+
 ## Generics
 
 > - Define type-safe data structures.
