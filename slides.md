@@ -701,7 +701,6 @@ Stack<double> tail = stack.Pop();
 > - Function types (create objects which are functions)
 > - Function values (assign functions or methods)
 > - Function arithmetic (add or substract functions)
-> - LINQ (can replace loops)
 
 ## Func, Predicate, Action
 
